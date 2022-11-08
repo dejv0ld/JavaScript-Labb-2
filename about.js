@@ -10,7 +10,7 @@ function getCities() {
     .then((response) => response.json())
     .then((data) => {
       data.forEach((city) => {
-        citiesDiv.innerHTML += `<div class="card" style="width: 18rem">
+        citiesDiv.innerHTML += `<div class="cities-card" style="width: 18rem">
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><strong>ID: </strong><br>${city.id}</li>
     <li class="list-group-item"><strong>City: </strong>${city.name}</li>

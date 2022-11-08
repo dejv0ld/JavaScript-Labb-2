@@ -6,15 +6,48 @@
 /* 5. */
 /* 6. */
 /* 7. */
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --light-bg-clr: #f5f5f5;
+  --dark-grey-bg: #292929;
+  --medium-grey-bg: #70706b;
+  --light-grey-bg: #c7c7bd;
+  --button-clr: #17acb4;
+  --card-text: #f5f5f5;
+  --hero-img: url(images/hero_image.jpg);
+}
 
-/* 1. Settings */
+:root:has(#light:checked) {
+  --light-bg-clr: #f5f5f5;
+  --dark-grey-bg: #c7c7bd;
+  --medium-grey-bg: #f5f5f5;
+  --light-grey-bg: #c7c7bd;
+  --button-clr: #17acb4;
+  --card-text: black;
+  --hero-img: url(images/light_hero.jpg);
+}
+/*  :root:has(#dark:checked) {
+  --light-bg-clr: #f5f5f5;
+  --dark-grey-bg: #292929;
+  --medium-grey-bg: #70706b;
+  --light-grey-bg: #c7c7bd;
+  --button-clr: #17acb4;
+  --card-text: #f5f5f5;
+  --hero-img: url(images/hero_image.jpg);
+}  */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* 1. Settings 
 body,
 html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1em;
 }
 
@@ -26,11 +59,18 @@ html {
 }
 .navbar {
   background-color: #292929 !important;
-  
 }
 
 .nav-link {
   color: #f5f5f5;
+}
+
+.navbar-brand {
+  color: #f5f5f5;
+}
+.navbar-toggler {
+  color: #f5f5f5;
+  background-color: white;
 }
 
 .active {
@@ -40,47 +80,129 @@ html {
   color: black !important;
 }
 
-/* 3. Card Grid*/
+/* Hidden radiobutton text */
+.radiobtn-notext {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.color-mode > fieldset {
+  border: 0;
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  padding: 0rem 0rem 19rem 0rem;
+  margin-inline: auto;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.color-mode input[type="radio"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  outline: 3px solid var(--radio-clr, currentColor);
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+.color-mode input[type="radio"]#light {
+  --radio-clr: white;
+}
+
+.color-mode input[type="radio"]#dark {
+  --radio-clr: var(--dark-grey-bg);
+}
+
+.color-mode input[type="radio"]#blue {
+  --radio-clr: blue;
+}
+
+.color-mode input[type="radio"]:checked {
+  background-color: var(--radio-clr);
+}
+
+/* 3. CHART design */
+#chart-container {
+  display: flex;
+  background-color: var(--medium-grey-bg);
+  padding: 0px 0px 70px 0px;
+}
+
+#chart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  width: 60rem;
+  height: auto;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--dark-grey-bg);
+  border-radius: 8px;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2),
+    0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
+  border: 3px solid #17acb4;
+}
+
+/* 4. Card Grid*/
 #result {
   display: grid;
   width: 100%;
   height: 100%;
-  padding: 50px 10px 10px 10px;
+  padding: 70px 0px 0px 0px;
   list-style: none;
   margin: 0;
-  display: grid;
-  grid-gap: 20px;
+  grid-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  background-color: #b9b9b6;
   justify-items: center;
+  background-color: var(--medium-grey-bg);
 }
 
 #grid-section {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .list-group-item {
-  color: black;
-  background-color: #f5f5f5;
+  color: var(--card-text);
+  background-color: var(--dark-grey-bg);
 }
 
 .card {
-  background-color: #f5f5f5;
-  color: black;
+  background-color: var(--dark-grey-bg);
+  color: var(--card-text);
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2),
+    0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);
 }
 
-a {
+#play-btn {
+  border: 0px;
+  border-radius: 8px;
+  background-color: rgb(223, 140, 16);
+}
+
+#play-btn:hover {
+  background-color: rgb(114, 80, 28);
+}
+
+#link-text {
   text-decoration: none;
 }
 
-/* 4. Hero */
+/* 5. Hero */
 /* Hero with a gradient at 0.5 opacity */
+
 .hero {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/hero_image.jpg");
+    var(--hero-img);
   height: 100vh;
   align-self: center;
   background-repeat: no-repeat;
@@ -102,36 +224,121 @@ a {
   text-align: center;
 }
 
-/* Input inside Hero image */
+/* Search section */
+
+#search-heading-div {
+  height: 70px;
+  text-align: center;
+  background-color: var(--medium-grey-bg);
+  padding: 30px 0px 10px 0px;
+}
+
+#search-heading {
+  color: black;
+}
+
 #genre {
-  border: 1px solid red;
+  height: 40px;
+  border: 3px solid var(--button-clr);
   border-radius: 8px;
+}
+
+.search-btn-div {
+  display: inline-flex;
+  background-color: var(--medium-grey-bg);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 10px 0px 0px 0px;
 }
 
 /* Search button and New Search button*/
-#btn1 {
-  border: 1px solid red;
-  border-radius: 8px;
-  margin: 5px;
-} 
-#btn2 {
-  border: 1px solid red;
-  border-radius: 8px;
-  margin: 5px;
+.btn1 {
+  width: 150px;
+  font-size: 20px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: var(--button-clr);
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
 }
 
-/*Button*/
+.btn-text {
+  color: var(--light-bg-clr);
+  font-size: 1em;
+  background-image: none;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn2 {
+  width: 150px;
+  font-size: 20px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: var(--button-clr);
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  color: var(--light-bg-clr);
+  margin: 10px;
+}
 
 /* CITIES PAGE styling below */
+
+/*GET Cities button div*/
+#get-cities-div {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px 30px 0px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-cities {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/cities_hero.jpg");
+  height: 60vh;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-cities {
+  font-size: 1.7rem;
+  text-align: center;
+  color: #f5f5f5;
+  margin: 0 0.3em 0 0.3em;
+}
+
 /* POST Form */
 #form-section {
   display: flex;
   border: 1px solid rgb(202, 201, 201);
   padding: 10px;
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   margin: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 #post-form {
@@ -142,17 +349,73 @@ a {
   margin: 10px;
 }
 
+#put-form {
+  width: auto;
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#delete-form-div {
+  width: auto;
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.form-group {
+  padding: 10px;
+}
+
 /* Cities cards */
+
+#cities-grid-section {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #cities-div {
   display: grid;
   width: 100%;
-  height: 100%;
-  padding: 50px 10px 10px 10px;
+  height: auto;
+  padding: 20px 0px 20px 0px;
   list-style: none;
   margin: 0;
-  display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  background-color: #b9b9b6;
   justify-items: center;
+  background-color: #70706b;
+}
+
+.cities-card {
+  background-color: #292929;
+  color: white;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2),
+    0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* FOOTER */
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #1ddde8;
+}
+
+/* Media queries */
+@media screen and (max-width: 510px) {
+  .color-mode > fieldset {
+    padding: 0rem 0rem 15rem 0rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .color-mode > fieldset {
+    padding: 0rem 0rem 11rem 0rem;
+  }
 }

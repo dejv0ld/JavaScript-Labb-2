@@ -1,7 +1,7 @@
 "use strict";
 
-const searchBtn = document.querySelector("#btn1");
-const newSearchBtn = document.querySelector("#btn2");
+const searchBtn = document.querySelector(".btn1");
+const newSearchBtn = document.querySelector(".btn2");
 const results = document.getElementById("result");
 
 //Function that takes users category input and then fetch the data
@@ -44,7 +44,7 @@ function genreFunc() {
         <li class="list-group-item"><strong>Release Date: </strong>${game.release_date}</li>
       </ul>
       <div class="card-body">
-        <a href="${game.game_url}" class="card-link">Play for Free</a>
+        <button id="play-btn" type="button><a id="link-text" href="${game.game_url}" class="card-link">Play for Free</a></button>
       </div>
     </div>`;
       });
@@ -57,7 +57,7 @@ searchBtn.addEventListener("click", () => {
   selectElement.style.display = "none";
   let tags = document.querySelector("#tags");
   tags.style.display = "none";
-  const searchBtn = document.querySelector("#btn1");
+  const searchBtn = document.querySelector(".btn1");
   searchBtn.style.display = "none";
 });
 
@@ -68,3 +68,6 @@ function refresh() {
 
 //data.screenshots.[0]
 //<img src = ${data.screenshots[0].image}
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})

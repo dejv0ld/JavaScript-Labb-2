@@ -32,79 +32,78 @@
   <!--Main Content-->
   <main>
 
+    <section class="hero-container">
+      <div class="hero-cities">
+        <div class="text-cities">
+          <h1>Cities</h1>
+    </section>
+
     <!--PUT and DELETE Forms-->
-    <div>
-      <button type="btn" id="show-cities" class="btn btn-primary" onclick="getCities()">Show Cities</button>
+    <div id="get-cities-div">
+      <h2>Show, update, add or remove a city</h2>
+      <button type="button" id="show-cities" class="btn btn-primary" onclick="getCities()">Show Cities</button>
     </div>
 
-    <section id="form-section">
-      <!--POST-->
-      <div id="post-form">
-        <div class="form-group">
-          <label for="exampleInputEmail1">ID Number</label>
-          <input type="text" class="form-control" id="id-number" aria-describedby="emailHelp" placeholder="Enter ID">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">City</label>
-          <input type="text" class="form-control" id="city-input" placeholder="City">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Population</label>
-          <input type="text" class="form-control" id="pop-input" placeholder="Population">
-        </div>
-        <button type="btn" id="add-city-button" class="btn btn-primary" onclick="addCity()">Add City</button>
-      </div>
-      <!--Delete-->
-      <div id="delete-form-div">
-        <div class="form-group">
-          <label for="exampleInputPassword1">Delete City</label>
-          <input type="text" class="form-control" id="del-input" placeholder="Insert ID...">
-        </div>
-        <button type="btn" id="del-city-btn" class="btn btn-primary" onclick="deleteCity()">Delete</button>
-      </div>
-      <!--PATCH-->
-      <div id="post-form">
+    <div id="form-section">
+
+
+
+      <!--Put-->
+      <div id="put-form">
         <p>Update City</p>
         <div class="form-group">
-          <label for="exampleInputEmail1">ID Number</label>
-          <input type="text" class="form-control" id="patch-id-input" aria-describedby="emailHelp"
-            placeholder="Enter ID">
+          <label for="patch-id-input">ID Number</label>
+          <input type="text" class="form-control" id="patch-id-input" placeholder="Enter ID">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">City</label>
+          <label for="patch-city-input">City</label>
           <input type="text" class="form-control" id="patch-city-input" placeholder="City">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Population</label>
+          <label for="patch-pop-input">Population</label>
           <input type="text" class="form-control" id="patch-pop-input" placeholder="Population">
         </div>
-        <button type="btn" id="patch-button" class="btn btn-primary" onclick="patchCity()">Add City</button>
+        <button type="button" id="patch-button" class="btn btn-primary" onclick="patchCity()">Add City</button>
       </div>
 
+      <!--POST-->
+      <div id="post-form">
+        <div class="form-group">
+          <label for="city-input">City</label>
+          <input type="text" class="form-control" id="city-input" placeholder="City">
+        </div>
+        <div class="form-group">
+          <label for="pop-input">Population</label>
+          <input type="text" class="form-control" id="pop-input" placeholder="Population">
+        </div>
+        <button type="button" id="add-city-button" class="btn btn-primary" onclick="addCity()">Add City</button>
+      </div>
 
-    </section>
-
-
-    <!--Cities fetch div-->
-    <div id="cities-div">
+      <!--Delete-->
+      <div id="delete-form-div">
+        <div class="form-group">
+          <label for="del-input">Delete City</label>
+          <input type="text" class="form-control" id="del-input" placeholder="Insert ID...">
+        </div>
+        <button type="button" id="del-city-btn" class="btn btn-primary" onclick="deleteCity()">Delete</button>
+      </div>
 
     </div>
+
+    <!--Cities fetch div-->
+    <div id="cities-grid-section">
+      <div id="cities-div">
+
+      </div>
+    </div>
+
+
 
 
   </main>
   <!--Footer-->
-  <footer>
-    <div class="card">
-      <div class="card-header">
-        Quote
-      </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p>A well-known quote, contained in a blockquote element.</p>
-          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-      </div>
-    </div>
+  <footer id="footer">
+    <p>copyright 2022 all rights reserved</p>
   </footer>
 
 

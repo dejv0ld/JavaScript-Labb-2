@@ -1,14 +1,15 @@
 [
   {
     "id": "1",
-    "title": "PUBG: Battlegrounds",
-    "players": "1200"
-  },
-  {
-    "id": "2",
     "title": "Candy Crush Saga",
     "players": "2730"
   },
+  {
+    "id": "2",
+    "title": "PUBG: Battlegrounds",
+    "players": "1200"
+  },
+
   {
     "id": "3",
     "title": "Crossfire",
