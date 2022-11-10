@@ -44,11 +44,12 @@ function genreFunc() {
         <li class="list-group-item"><strong>Release Date: </strong>${game.release_date}</li>
       </ul>
       <div class="card-body">
-        <button id="play-btn" type="button><a id="link-text" href="${game.game_url}" class="card-link">Play for Free</a></button>
+        <a id="link-text" target="_blank" href="${game.game_url}" class="card-link">Play for Free</a>
       </div>
     </div>`;
       });
     });
+  /*   <a id="link-text" href="${game.game_url}" class="card-link">Play for Free</a> */
 }
 
 //Makes search button dissapear on click
@@ -65,9 +66,3 @@ searchBtn.addEventListener("click", () => {
 function refresh() {
   location.reload();
 }
-
-//data.screenshots.[0]
-//<img src = ${data.screenshots[0].image}
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})

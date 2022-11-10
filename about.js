@@ -61,19 +61,14 @@ function deleteCity() {
       refresh();
     })
 }
-/* let id = prompt('Id')
-let name1 = prompt('City')
-let population1 = parseFloat(prompt('population number')) */
-const updateCityBtn = document.querySelector('#patch-button')
 
+const updateCityBtn = document.querySelector('#patch-button')
 
 function patchCity() {
   let selectIdinput2 = document.querySelector('#patch-id-input')
   let idInput2 = selectIdinput2.value
-
   let selectCityInput2 = document.querySelector('#patch-city-input')
   let cityInput2 = selectCityInput2.value
-
   let selectPopulationInput2 = document.querySelector('#patch-pop-input')
   let populationInput2 = parseFloat(selectPopulationInput2.value)
 
@@ -89,50 +84,8 @@ function patchCity() {
       refresh();
     })
 }
-/*   if (isNaN(populationInput2)) {
-    populationInput2 = null;
-  }
- 
-  if (cityInput2.length > 0 && populationInput2.length < 1) {
-    fetch(`https://avancera.app/cities/${idInput2}`, {
-      body: JSON.stringify({ "name": cityInput2 }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'PATCH'
-    })
-      .then(response => {
-        console.log(response)
-      })
-  } else if (populationInput2 !== null && cityInput2 === null) {
-    fetch(`https://avancera.app/cities/${idInput2}`, {
-      body: JSON.stringify({ "population": populationInput2 }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'PATCH'
-    })
-      .then(response => {
-        console.log(response)
-      })
-  } else if (cityInput2 !== null && populationInput2 !== null) {
-    fetch(`https://avancera.app/cities/${idInput2}`, {
-      body: JSON.stringify({ "name": cityInput2, "population": populationInput2 }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'PATCH'
-    })
-      .then(response => {
-        console.log(response)
-      })
-  }
- 
-} */
-
 
 //Function refresh page
 function refresh() {
   location.reload();
-
 }
