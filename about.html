@@ -62,6 +62,7 @@
           <input type="text" class="form-control" id="patch-pop-input" placeholder="Population">
         </div>
         <button type="button" id="put-button" class="btn btn-primary" onclick="patchCity()">Edit</button>
+        <p id="edit-confirmation" style="color: red;">The city has been updated!</p>
       </div>
 
       <!--POST-->
@@ -76,6 +77,7 @@
           <input type="text" class="form-control" id="pop-input" placeholder="Population">
         </div>
         <button type="button" id="add-city-button" class="btn btn-primary" onclick="addCity()">Add</button>
+        <p id="add-confirmation" style="color: red;">The city has been added!</p>
       </div>
 
       <!--Delete-->
@@ -86,6 +88,7 @@
           <input type="text" class="form-control" id="del-input" placeholder="Insert ID...">
         </div>
         <button type="button" id="del-city-btn" class="btn btn-primary" onclick="deleteCity()">Delete</button>
+        <p id="del-confirmation" style="color: red;">The city has been deleted!</p>
       </div>
 
     </div>
@@ -96,7 +99,7 @@
       </div>
     </div>
   </main>
-<div id="scroll-div"></div>
+  <div id="scroll-div"></div>
   <!--Footer-->
   <footer id="footer" id="footer-cities" class="cities-footer">
     <p style="color: black">Copyright © 2022 Cities. All rights reserved.</p>

@@ -85,6 +85,9 @@ searchBtn.addEventListener("click", () => {
 
 //Function refresh page
 function refresh() {
-  location.reload();
+  /* location.reload(); */
+  setTimeout(function(){
+    window.location.reload();
+ }, 2000);
 }
 

@@ -35,6 +35,7 @@
   --chart-text-div: #292929;
   --chart-text-clr: white;
   --hero-img: url(images/hero_image.avif);
+  --img-div: url(images/dark_keyboard.jpg);
 }
 
 :root:has(#light:checked) {
@@ -45,9 +46,9 @@
   --button-clr: #17acb4;
   --card-text: black;
   --btn-text-clr: black;
-  --chart-text-clr: black;
+  --chart-text-clr: white;
   --chart-text-div: #c7c7bd;
-  
+  --img-div: url(images/light_img_div.jpg);
   --hero-img: url(images/light_hero.avif);
 }
 
@@ -60,9 +61,10 @@
   --card-text: black;
   --btn-text-clr: white;
   --chart-text-div: linear-gradient(to right, #52b69a, #76c893);
-  --chart-text-clr: black;
+  --chart-text-clr: white;
   --navbar-clr: linear-gradient(to right, #168aad, #52b69a);
   --hero-img: url(images/blue_hero2.avif);
+  --img-div: url(images/screen_img.avif);
 }
 
 .home-body {
@@ -201,22 +203,33 @@ html {
 }
 
 .chart-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: var(--chart-text-div);
   color: var(--chart-text-clr);
   height: 100%;
 }
-.chart-text-container > h3 {
-  text-align: center;
-  padding-top: 10px;
+
+.chart-text-heading {
+  padding-top: 20px;
 }
 
-.chart-lorem-text > p {
+.chart-lorem-text {
   text-align: center;
   padding-inline: 8vw;
+
+}
+
+.img-div {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--img-div);
+  height: 50vh;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 4. Card Grid*/
@@ -534,6 +547,8 @@ html {
   background-color: #52796f !important;
 }
 
+
+
 /* 15. Media queries */
 /* 320px - 374px*/
 @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -552,6 +567,15 @@ html {
   #chart > h2 {
     font-size: 1rem;
   }
+
+  .chart-text-heading {
+    font-size: 17px;
+  }
+  
+  .chart-lorem-text {
+    font-size: 12px;
+  
+  }
 }
 
 /* 375px - 400px */
@@ -561,7 +585,15 @@ html {
   }
 
   .text {
-    padding-bottom: 17rem;
+    padding-bottom: 18rem;
+  }
+  .chart-text-heading {
+    font-size: px;
+  }
+  
+  .chart-lorem-text {
+    font-size: 14px;
+  
   }
 }
 
@@ -592,5 +624,13 @@ html {
 
   #chart > h2 {
     font-size: 1rem;
+  }
+  .chart-text-heading {
+    font-size: 17px;
+  }
+  
+  .chart-lorem-text {
+    font-size: 12px;
+  
   }
 }

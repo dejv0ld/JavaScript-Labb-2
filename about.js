@@ -22,6 +22,8 @@ getCityBtn.addEventListener('click', () => {
   getCityBtn.style.display = 'none'
 })
 
+const addConfirmation = document.querySelector('#add-confirmation')
+addConfirmation.style.display = 'none'
 const addCityBtn = document.querySelector("#add-city-button");
 //Add city function
 function addCity() {
@@ -41,10 +43,17 @@ function addCity() {
     .then(response => response.json())
     .then(result => {
       console.log(result)
+      if (addConfirmation.style.display === 'none') {
+        addConfirmation.style.display = 'block'
+      } else {
+        addConfirmation.style.display = 'none'
+      }
       refresh();
     })
 }
 
+const delConfirmation = document.querySelector('#del-confirmation')
+delConfirmation.style.display = 'none';
 const deleteBtn = document.querySelector('#del-city-btn')
 //Delete function
 function deleteCity() {
@@ -56,12 +65,22 @@ function deleteCity() {
     .then(response => response.json())
     .then(result => {
       console.log(result)
-      refresh();
     })
 }
 
-const updateCityBtn = document.querySelector('#patch-button')
+deleteBtn.addEventListener('click', () => {
+  if (delConfirmation.style.display === 'none') {
+    delConfirmation.style.display = 'block'
+  } else {
+    delConfirmation.style.display = 'none'
+  }
+  refresh();
+})
 
+const editConfirmation = document.querySelector('#edit-confirmation')
+editConfirmation.style.display = 'none'
+const updateCityBtn = document.querySelector('#patch-button')
+//Put FUnction
 function patchCity() {
   let selectIdinput2 = document.querySelector('#patch-id-input')
   let idInput2 = selectIdinput2.value
@@ -79,17 +98,28 @@ function patchCity() {
   })
     .then(response => {
       console.log(response)
+      if (editConfirmation.style.display === 'none') {
+        editConfirmation.style.display = 'block'
+      } else {
+        editConfirmation.style.display = 'none'
+      }
       refresh();
     })
 }
 
-// Function refresh page
+// Function refresh page after 1.5sec
 function refresh() {
-  location.reload();
+  /* location.reload(); */
+  setTimeout(function () {
+    window.location.reload();
+  }, 1500);
 }
+
 
 // "Show cities" button scrolls down to the results section
 getCityBtn.addEventListener('click', () => {
   document.getElementById('scroll-div').scrollIntoView({ behavior: 'smooth' });
 })
+
+
 
