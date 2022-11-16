@@ -15,10 +15,12 @@ const getMode = function () {
   })
 }
 
+//Updates local storage when clicking on checkbox
 colorModes.forEach(checkbox => {
   checkbox.addEventListener('click', () => {
     storeMode(checkbox.id)
   })
 })
 
+//Running getMode() applies colormode on load
 document.onload = getMode();

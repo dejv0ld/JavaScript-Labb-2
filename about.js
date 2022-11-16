@@ -1,8 +1,6 @@
 "use strict";
 
 //Fetching cities and outputs them on html page
-//https://avancera.app/cities/
-
 const citiesDiv = document.querySelector("#cities-div");
 let getCityBtn = document.querySelector('#show-cities')
 function getCities() {
@@ -12,9 +10,9 @@ function getCities() {
       data.forEach((city) => {
         citiesDiv.innerHTML += `<div class="cities-card" style="width: 18rem">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>ID: </strong><br>${city.id}</li>
-    <li class="list-group-item"><strong>City: </strong>${city.name}</li>
-    <li class="list-group-item"><strong>Population: </strong>${city.population}</li>
+    <li class="list-group-item cities-cards"><strong>ID: </strong><br>${city.id}</li>
+    <li class="list-group-item cities-cards"><strong>City: </strong>${city.name}</li>
+    <li class="list-group-item cities-cards"><strong>Population: </strong>${city.population}</li>
   </ul>
     </div>`;
       });
@@ -85,7 +83,13 @@ function patchCity() {
     })
 }
 
-//Function refresh page
+// Function refresh page
 function refresh() {
   location.reload();
 }
+
+// "Show cities" button scrolls down to the results section
+getCityBtn.addEventListener('click', () => {
+  document.getElementById('scroll-div').scrollIntoView({ behavior: 'smooth' });
+})
+

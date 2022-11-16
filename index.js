@@ -1,5 +1,21 @@
 "use strict";
 
+//Logs api into the console
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '6518d65955msh1c56e49639862c9p16c447jsnd4f06e89b32c',
+    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+  }
+};
+
+fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?category=shooter', options)
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result)
+
+  })
+
 const searchBtn = document.querySelector(".btn1");
 const newSearchBtn = document.querySelector(".btn2");
 const results = document.getElementById("result");
@@ -49,7 +65,6 @@ function genreFunc() {
     </div>`;
       });
     });
-  /*   <a id="link-text" href="${game.game_url}" class="card-link">Play for Free</a> */
 }
 
 //Makes search button dissapear on click
@@ -66,3 +81,4 @@ searchBtn.addEventListener("click", () => {
 function refresh() {
   location.reload();
 }
+

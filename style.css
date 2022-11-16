@@ -1,15 +1,28 @@
 /*Description*/
+/* 0. ROOT */
 /* 1. Settings */
 /* 2. Navbar*/
-/* 3. Card Grid*/
-/* 4. Hero */
-/* 5. */
-/* 6. */
-/* 7. */
+/* 3. Radio buttons */
+/* 4. Chart */
+/* 5. Game card grid */
+/* 6. Hero */
+/* 7. Search section */
+/* 8. Footer f2p home*/
+/* 9. Cities page styling */
+/* 10. Cities Navbar */
+/* 11. Cities hero*/
+/* 12. Cities FORMS */
+/* 13. Cities CARDS */
+/* 14. Cities FOOTER */
+/* 15. Media queries */
+
+
+/* 0. ROOT */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
+
 :root {
   --light-bg-clr: #f5f5f5;
   --dark-grey-bg: #292929;
@@ -17,12 +30,9 @@
   --light-grey-bg: #c7c7bd;
   --button-clr: #17acb4;
   --card-text: #f5f5f5;
-  --skyblue-clr: #0c1645;
-  --dark-skyblue-clr: #101636;
-  --black-sky-clr: #0e0b06;
-  --grey-brown: #6c5255;
-  --dark-grey-brown: #3a302e;
-  --hero-img: url(images/hero_image.jpg);
+  --navbar-clr: #292929;
+  --btn-text-clr: black;
+  --hero-img: url(images/hero_image.avif);
 }
 
 :root:has(#light:checked) {
@@ -32,19 +42,28 @@
   --light-grey-bg: #c7c7bd;
   --button-clr: #17acb4;
   --card-text: black;
-  --hero-img: url(images/light_hero.jpg);
+  --btn-text-clr: black;
+  --hero-img: url(images/light_hero.avif);
 }
-/*  :root:has(#dark:checked) {
+
+:root:has(#blue:checked) {
   --light-bg-clr: #f5f5f5;
-  --dark-grey-bg: #292929;
-  --medium-grey-bg: #70706b;
+  --dark-grey-bg: #34a0a4;
+  --medium-grey-bg: white;
   --light-grey-bg: #c7c7bd;
-  --button-clr: #17acb4;
-  --card-text: #f5f5f5;
-  --hero-img: url(images/hero_image.jpg);
-}  */
+  --button-clr: black;
+  --card-text: black;
+  --btn-text-clr: white;
+  --navbar-clr: linear-gradient(to right, #168aad, #52b69a);
+  --hero-img: url(images/blue_hero2.avif);
+}
+
+.home-body {
+  background-color: var(--medium-grey-bg);
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 /* 1. Settings */
 body,
 html {
@@ -63,7 +82,7 @@ html {
   z-index: 999;
 }
 .navbar {
-  background-color: #292929 !important;
+  background: var(--navbar-clr) !important;
 }
 
 .nav-link {
@@ -73,6 +92,12 @@ html {
 .navbar-brand {
   color: #f5f5f5;
 }
+
+.navbar-brand > img {
+  height: 50px;
+  width: auto;
+}
+
 .navbar-toggler {
   color: #f5f5f5;
   background-color: white;
@@ -81,10 +106,12 @@ html {
 .active {
   color: #f5f5f5 !important;
 }
+
 .active:hover {
   color: black !important;
 }
 
+/* 3. Radio btns */
 /* Hidden radiobutton text */
 .radiobtn-notext {
   clip: rect(0 0 0 0);
@@ -95,13 +122,13 @@ html {
   white-space: nowrap;
   width: 1px;
 }
-/* Radio btns */
+
 .color-mode > fieldset {
   border: 0;
   display: flex;
   gap: 2rem;
   width: fit-content;
-  padding: 0rem 0rem 20rem 0rem;
+  padding-bottom: 24rem;
   margin-inline: auto;
   border-radius: 0 0 1rem 1rem;
 }
@@ -121,22 +148,23 @@ html {
 }
 
 .color-mode input[type="radio"]#dark {
-  --radio-clr: var(--dark-grey-bg);
+  --radio-clr: #292929;
 }
 
 .color-mode input[type="radio"]#blue {
-  --radio-clr: blue;
+  --radio-clr: #168aad;
 }
 
 .color-mode input[type="radio"]:checked {
   background-color: var(--radio-clr);
 }
 
-/* 3. CHART design */
+/* 4. CHART design */
 #chart-container {
+  height: 100%;
   display: flex;
   background-color: var(--medium-grey-bg);
-  padding: 40px 10px 70px 10px;
+  padding: 70px 10px 70px 10px;
 }
 
 #chart {
@@ -162,7 +190,7 @@ html {
 }
 
 #chart > h2 > small {
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 /* 4. Card Grid*/
@@ -172,7 +200,7 @@ html {
   height: 100%;
   padding: 70px 0px 0px 0px;
   list-style: none;
-  margin: 0;
+  margin: 0px;
   grid-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
@@ -184,6 +212,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  background: var(--medium-grey-bg);
 }
 
 .list-group-item {
@@ -206,7 +235,7 @@ html {
   border-radius: 8px;
 }
 
-/* 5. Hero */
+/* 6. Hero */
 .hero {
   display: flex;
   flex-direction: column;
@@ -225,15 +254,11 @@ html {
   font-size: 1.7rem;
   text-align: center;
   color: #f5f5f5;
+  padding-bottom: 27rem;
   margin: 0 0.3em 0 0.3em;
 }
 
-.text #tags {
-  font-size: 15px;
-  text-align: center;
-}
-
-/* Search section */
+/* 7. Search section */
 #search-heading-div {
   height: 70px;
   text-align: center;
@@ -271,11 +296,11 @@ html {
   height: 40px;
   border: none;
   outline: none;
-  background: var(--button-clr);
+  background-color: var(--button-clr);
   cursor: pointer;
   position: relative;
   border-radius: 10px;
-  color: white;
+  color: var(--btn-text-clr);
   margin: 10px;
 }
 
@@ -284,7 +309,7 @@ html {
 }
 
 .btn-text {
-  color: var(--light-bg-clr);
+  color: var(--btn-text-clr);
   font-size: 1em;
   background-image: none;
   font-weight: bold;
@@ -302,7 +327,7 @@ html {
   cursor: pointer;
   position: relative;
   border-radius: 10px;
-  color: var(--light-bg-clr);
+  color: var(--btn-text-clr);
   margin: 10px;
 }
 
@@ -310,9 +335,27 @@ html {
   background-color: #0f5a5e;
 }
 
-/* CITIES PAGE styling below */
+/* 8. Home footer */
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  padding-top: 12px;
+  background: var(--navbar-clr);
+}
 
-/*GET Cities button div*/
+/* 9. CITIES PAGE styling below */
+.cities-body {
+  background-color: #cad2c5;
+}
+
+/* 10. Navbar */
+#navbar-cities {
+  height: 69px;
+  background-color: #52796f !important;
+}
+
 #get-cities-div {
   display: flex;
   flex-direction: column;
@@ -320,20 +363,28 @@ html {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  background-color: #c7c7bd;
+  background-color: #cad2c5;
 }
 
 #get-cities-div > h2 {
   padding: 1rem;
-text-align: center;
+  text-align: center;
 }
 
-/* Cities Hero */
+.cities-cards {
+  background-color: #354f52 !important;
+}
+
+/* 11. Cities Hero */
+.hero-container {
+  margin-top: 69px;
+}
+
 .hero-cities {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/cities_hero.jpg");
+    url("images/cities_hero_2.jpg");
   height: 60vh;
   align-self: center;
   background-repeat: no-repeat;
@@ -350,6 +401,7 @@ text-align: center;
   margin: 0 0.3em 0 0.3em;
 }
 
+/* 12. FORMS */
 /* POST Form */
 #form-section {
   display: flex;
@@ -359,65 +411,65 @@ text-align: center;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-grey-bg)
-  
+  background-color: #cad2c5;
 }
 
 #post-form {
   width: auto;
-  border: 1px solid rgb(202, 201, 201);
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
   color: white;
-  background-color: var(--dark-skyblue-clr)
+  background-color: #354f52;
 }
 
 /* PUT Form */
 #put-form {
   width: auto;
-  border: 1px solid rgb(202, 201, 201);
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
   color: white;
-  background-color: var(--dark-skyblue-clr)
+  background-color: #354f52;
 }
 
 #put-button {
   border: none;
-  background-color: rgb(196, 134, 19)
+  color: black;
+  background-color: #84a98c;
 }
 
 /* Delete Form */
 #delete-form-div {
   width: auto;
-  border: 1px solid rgb(202, 201, 201);
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
   color: white;
-  background-color: var(--dark-skyblue-clr)
+  background-color: #354f52;
 }
 
 #del-city-btn {
   border: none;
-  background-color: rgb(196, 134, 19)
+  color: black;
+  background-color: #84a98c;
 }
 
 #add-city-button {
   border: none;
-  background-color: rgb(196, 134, 19)
+  color: black;
+  background-color: #84a98c;
 }
 
 .form-group {
   padding: 10px;
 }
 
-/* Cities cards */
+/* 13. Cities cards */
 #show-cities {
   border: none;
-  background-color: rgb(196, 134, 19)
+  color: black;
+  background-color: #84a98c;
 }
 
 #cities-grid-section {
@@ -437,7 +489,7 @@ text-align: center;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-  background-color: var(--light-grey-bg)
+  background-color: #cad2c5;
 }
 
 .cities-card {
@@ -446,20 +498,25 @@ text-align: center;
     0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);
 }
 
-/* FOOTER */
-#footer {
+/* 14. FOOTER */
+.cities-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 5vh;
   padding-top: 12px;
-  background-color: #292929;
+  background-color: #52796f !important;
 }
 
-/* Media queries */
-@media screen and (max-width: 376px) {
+/* 15. Media queries */
+/* 320px - 374px*/
+@media screen and (min-width: 320px) and (max-width: 374px) {
   .color-mode > fieldset {
-    padding: 0rem 0rem 8rem 0rem;
+    padding-bottom: 7rem;
+  }
+
+  .text {
+    padding-bottom: 9rem;
   }
 
   #footer > p {
@@ -471,3 +528,43 @@ text-align: center;
   }
 }
 
+/* 375px - 400px */
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .color-mode > fieldset {
+    padding-bottom: 13rem;
+  }
+
+  .text {
+    padding-bottom: 17rem;
+  }
+}
+
+/* 401px - 600px */
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .color-mode > fieldset {
+    padding-bottom: 15rem;
+  }
+
+  .text {
+    padding-bottom: 19rem;
+  }
+}
+
+/* MaxWidth 280px */
+@media screen and (max-width: 280px) {
+  .color-mode > fieldset {
+    padding-bottom: 11rem;
+  }
+
+  .text {
+    padding-bottom: 10rem;
+  }
+
+  #footer > p {
+    font-size: 12px;
+  }
+
+  #chart > h2 {
+    font-size: 1rem;
+  }
+}

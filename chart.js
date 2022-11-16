@@ -43,8 +43,16 @@ fetch('gamedata.json')
       },
       options: {
         scales: {
+
           y: {
             beginAtZero: true
+          },
+          x: {
+            ticks: {
+              font: {
+                size: 11,
+              }
+            }
           }
         }
       }
