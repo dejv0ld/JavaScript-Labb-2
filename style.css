@@ -32,6 +32,8 @@
   --card-text: #f5f5f5;
   --navbar-clr: #292929;
   --btn-text-clr: black;
+  --chart-text-div: #292929;
+  --chart-text-clr: white;
   --hero-img: url(images/hero_image.avif);
 }
 
@@ -43,6 +45,9 @@
   --button-clr: #17acb4;
   --card-text: black;
   --btn-text-clr: black;
+  --chart-text-clr: black;
+  --chart-text-div: #c7c7bd;
+  
   --hero-img: url(images/light_hero.avif);
 }
 
@@ -54,6 +59,8 @@
   --button-clr: black;
   --card-text: black;
   --btn-text-clr: white;
+  --chart-text-div: linear-gradient(to right, #52b69a, #76c893);
+  --chart-text-clr: black;
   --navbar-clr: linear-gradient(to right, #168aad, #52b69a);
   --hero-img: url(images/blue_hero2.avif);
 }
@@ -191,6 +198,25 @@ html {
 
 #chart > h2 > small {
   font-size: 0.7rem;
+}
+
+.chart-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--chart-text-div);
+  color: var(--chart-text-clr);
+  height: 100%;
+}
+.chart-text-container > h3 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.chart-lorem-text > p {
+  text-align: center;
+  padding-inline: 8vw;
 }
 
 /* 4. Card Grid*/

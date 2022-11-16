@@ -67,14 +67,20 @@ function genreFunc() {
     });
 }
 
+
 //Makes search button dissapear on click
 searchBtn.addEventListener("click", () => {
   let selectElement = document.querySelector("#genre");
   selectElement.style.display = "none";
+
   let tags = document.querySelector("#tags");
   tags.style.display = "none";
+
   const searchBtn = document.querySelector(".btn1");
   searchBtn.style.display = "none";
+
+  let container = document.querySelector('.chart-text-container')
+  container.style.marginTop = "70px"
 });
 
 //Function refresh page
